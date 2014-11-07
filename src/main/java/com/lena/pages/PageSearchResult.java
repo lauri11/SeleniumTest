@@ -16,13 +16,13 @@ public class PageSearchResult extends Page{
     }
 
     public void getResult(int num){
-        WebElement element = customWebDriver.findElement(By.xpath("//div[@name='goods_list']/div[@class='gtile-i-wrap']["+num+"]//div[@class='gtile-i-title']/a"));
+        WebElement element = customWebDriver.findElement(By.xpath("//div[@class='search-result-goods']/div[contains(@class, 'g-i-list')]["+num+"]//div[@class='g-i-list-title']/a"));
         //customWebDriver.waitForVisible(element);
         element.click();
     }
 
     public int getPrice(int num){
-        WebElement priceElement = customWebDriver.findElement(By.xpath("//div[@name='goods_list']/div[@class='gtile-i-wrap']["+num+"]//div[@class='g-price-uah']"));
+        WebElement priceElement = customWebDriver.findElement(By.xpath("//div[@class='search-result-goods']/div[contains(@class, 'g-i-list')]["+num+"]//div[@class='g-i-list-price-uah']"));
         String priceElementText = priceElement.getText();
         String replace = priceElementText.replaceAll("\\s", "").replace("грн.", "");
         priceElementText = replace.replace(" ", "");

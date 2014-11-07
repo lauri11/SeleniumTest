@@ -18,4 +18,9 @@ public class PageSelectedItem extends Page {
         priceElementText = priceElementText.replaceAll("\\s", "");
         return Integer.parseInt(priceElementText);
     }
+
+    public void clickBuyButton(){
+        WebElement buyButton = customWebDriver.findElement(By.xpath("//div[@class='pp-price-status-block']//button"));
+        buyButton.click();
+    }
 }

@@ -1,9 +1,7 @@
 package com.lena;
 
 
-import com.lena.pages.PageMain;
-import com.lena.pages.PageSearchResult;
-import com.lena.pages.PageSelectedItem;
+import com.lena.pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -37,6 +35,14 @@ public class PageManager {
 
     public PageSelectedItem getPageSelectedItem(){
         return new PageSelectedItem(customWebDriver);
+    }
+
+    public PageCart getPageCart(){
+        return new PageCart(customWebDriver);
+    }
+
+    public PageOrder getPageOrder(){
+        return  new PageOrder(customWebDriver);
     }
 
     public void close(){
